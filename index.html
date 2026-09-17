@@ -173,6 +173,8 @@
   }
   .proj-link:hover{color:var(--accent);}
   .proj-card.wide{grid-column:1 / -1;}
+  .proj-links-row{display:flex;gap:24px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px;}
+  .proj-links-row .proj-link{border-top:none;padding-top:0;margin-top:0;}
 
   /* ---------- stack ---------- */
   .stack-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;}
@@ -425,6 +427,26 @@
           <span class="tag">JavaScript</span>
         </div>
         <a class="proj-link" href="https://github.com/kla7712/bot-whatsapp" target="_blank" rel="noopener">Ver repositorio ↗</a>
+      </div>
+
+      <div class="proj-card wide">
+        <div class="proj-top">
+          <h3>Taller Kraft</h3>
+          <span class="proj-status"><span class="dot"></span>repo público</span>
+        </div>
+        <p class="proj-tagline">Node.js · AWS Lambda · Stripe</p>
+        <p>Checkout funcional de principio a fin: frontend estático conectado a Stripe para el pago, y dos funciones serverless en AWS Lambda que crean la sesión de pago y sincronizan el pedido vía webhook firmado en DynamoDB.</p>
+        <div class="proj-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">AWS Lambda</span>
+          <span class="tag">API Gateway</span>
+          <span class="tag">DynamoDB</span>
+          <span class="tag">Stripe API</span>
+        </div>
+        <div class="proj-links-row">
+          <a class="proj-link" href="https://github.com/kla7712/taller-kraft" target="_blank" rel="noopener">Ver repositorio ↗</a>
+          <a class="proj-link" href="https://kla7712.github.io/taller-kraft/" target="_blank" rel="noopener">Ver demo ↗</a>
+        </div>
       </div>
 
     </div>
