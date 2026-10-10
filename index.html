@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Juan Cala Cuesta — Desarrollador Full Stack</title>
-<meta name="description" content="Portfolio de Juan Cala Cuesta, desarrollador full stack en Jerez de la Frontera. Backend Spring Boot, apps Flutter y e-commerce.">
+<meta name="description" content="Portfolio de Juan Cala Cuesta, desarrollador full stack en Jerez de la Frontera. Backend con Java y Spring Boot, front con Angular y Flutter.">
+<meta property="og:title" content="Juan Cala Cuesta — Desarrollador Full Stack">
+<meta property="og:description" content="Backend con Java y Spring Boot, front con Angular y Flutter. Proyectos y experiencia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kla7712.github.io/">
+<meta property="og:image" content="https://kla7712.github.io/img/pista-libre-reserva.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -39,6 +44,8 @@
   img,svg{display:block;max-width:100%;}
   a{color:inherit;text-decoration:none;}
   ::selection{background:var(--accent-soft);color:var(--text);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+  section[id]{scroll-margin-top:72px;}
 
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
 
@@ -176,6 +183,60 @@
   .proj-links-row{display:flex;gap:24px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px;}
   .proj-links-row .proj-link{border-top:none;padding-top:0;margin-top:0;}
 
+  /* ---------- proyecto destacado ---------- */
+  .featured{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    overflow:hidden;margin-bottom:20px;
+  }
+  .featured-main{display:grid;grid-template-columns:1fr 1.15fr;gap:0;}
+  .featured-text{padding:36px;display:flex;flex-direction:column;gap:16px;}
+  .featured-label{
+    font-family:var(--font-m);font-size:12px;color:var(--gauge);
+    display:flex;align-items:center;gap:8px;
+  }
+  .featured-label .dot{width:6px;height:6px;border-radius:50%;background:var(--gauge);box-shadow:0 0 6px var(--gauge);}
+  .featured-text h3{font-size:clamp(26px,3vw,34px);margin:0;font-weight:600;letter-spacing:-.01em;line-height:1.1;}
+  .featured-text > p{color:var(--text-dim);font-size:15.5px;margin:0;}
+  .featured .exp-highlights li{font-size:14.5px;}
+  .featured .exp-highlights strong{color:var(--text);font-weight:500;}
+  .featured-shot{
+    background:var(--panel-2);border-left:1px solid var(--line);
+    padding:32px;display:flex;align-items:center;
+  }
+  .shot{
+    display:block;width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    background:#f5f6f1;transition:border-color .15s;
+  }
+  a.shot:hover{border-color:var(--accent);}
+  .shot img{width:100%;height:auto;}
+  .featured-shot .shot{box-shadow:0 18px 44px rgba(0,0,0,.4);}
+  .shot-bar{
+    display:flex;align-items:center;gap:6px;padding:9px 12px;
+    background:#2a3236;border-bottom:1px solid var(--line);
+  }
+  .shot-bar i{width:8px;height:8px;border-radius:50%;background:#4a555b;}
+  .shot-bar span{
+    margin-left:8px;font-family:var(--font-m);font-size:11px;color:var(--text-faint);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .featured-more{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    padding:28px;border-top:1px solid var(--line);
+  }
+  .featured-more figure{margin:0;}
+  .featured-more figcaption{font-family:var(--font-m);font-size:12px;color:var(--text-faint);margin-top:10px;}
+
+  /* ilustración de cabecera de cada proyecto */
+  .proj-art{
+    margin:-26px -26px 4px;height:104px;
+    background:var(--panel-2);border-bottom:1px solid var(--line);
+    border-radius:8px 8px 0 0;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .proj-art svg{height:64px;width:auto;fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  .proj-art svg .dim{stroke:var(--text-faint);}
+  .proj-art svg .fill{fill:var(--accent);stroke:none;}
+
   /* ---------- stack ---------- */
   .stack-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;}
   .stack-group .label{font-family:var(--font-m);font-size:12px;color:var(--text-faint);margin-bottom:14px;}
@@ -203,6 +264,8 @@
 
   /* ---------- responsive ---------- */
   @media (max-width:860px){
+    .featured-main{grid-template-columns:1fr;}
+    .featured-shot{border-left:none;border-top:1px solid var(--line);padding:22px;}
     .hero-grid{grid-template-columns:1fr;gap:36px;}
     .about-grid{grid-template-columns:1fr;}
     .exp-card{grid-template-columns:1fr;gap:22px;}
@@ -223,6 +286,12 @@
     section{padding:56px 0;}
     .stack-groups{grid-template-columns:1fr;}
     .contact-panel{padding:28px;}
+    .featured-text{padding:26px;}
+    .featured-more{grid-template-columns:1fr;padding:22px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
   }
 </style>
 </head>
@@ -238,7 +307,7 @@
       <a href="#stack">Stack</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -247,7 +316,7 @@
     <div>
       <p class="kicker"><span class="dot"></span>Jerez de la Frontera, Cádiz</p>
       <h1>Juan Cala Cuesta — construyo software <em>de principio a fin</em>.</h1>
-      <p class="lead">Desarrollador multiplataforma especializado en backend con Spring Boot y desarrollo móvil con Flutter. Diseño aplicaciones completas, desde la base de datos hasta la interfaz, incluyendo autenticación y control de acceso.</p>
+      <p class="lead">Desarrollador full stack especializado en backend con Java y Spring Boot, con front en Angular y apps móviles en Flutter. Diseño aplicaciones completas, desde la base de datos hasta la interfaz, incluyendo autenticación y control de acceso.</p>
       <div class="hero-cta">
         <a class="btn primary" href="#proyectos">Ver proyectos</a>
         <a class="btn ghost" href="#contacto">Contactar</a>
@@ -256,7 +325,7 @@
     <div class="readout">
       <div class="readout-head"><span>panel</span><span>juan_cala.dev</span></div>
       <div class="readout-row"><span class="k">Rol</span><span class="v">Full Stack Developer</span></div>
-      <div class="readout-row"><span class="k">Especialidad</span><span class="v">Backend Spring Boot + Flutter</span></div>
+      <div class="readout-row"><span class="k">Especialidad</span><span class="v">Spring Boot · Angular · Flutter</span></div>
       <div class="readout-row"><span class="k">Ubicación</span><span class="v">Jerez de la Frontera, Cádiz</span></div>
       <div class="readout-row"><span class="k">Idiomas</span><span class="v">Español · Inglés (B2, C1 en curso)</span></div>
       <div class="readout-row"><span class="k">Disponibilidad</span><span class="v">Total · vehículo propio</span></div>
@@ -275,7 +344,7 @@
       <div class="fact"><div class="label">Formación</div><div class="value">Grado Superior en Desarrollo de Aplicaciones Multiplataforma (Albor Jerez)</div></div>
       <div class="fact"><div class="label">Idiomas</div><div class="value">Castellano nativo · Inglés B2 Cambridge, C1 en curso</div></div>
       <div class="fact"><div class="label">Otros datos</div><div class="value">Carnet de conducir y vehículo propio · disponibilidad total</div></div>
-      <div class="fact"><div class="label">Foco actual</div><div class="value">Backend Java/Spring Boot y apps Flutter</div></div>
+      <div class="fact"><div class="label">Foco actual</div><div class="value">Backend Java/Spring Boot, front en Angular y apps Flutter</div></div>
     </div>
   </div>
 </section>
@@ -352,9 +421,58 @@
       <h2>Proyectos</h2>
       <p class="section-note">Repositorios públicos, cada uno en un stack distinto.</p>
     </div>
+    <article class="featured">
+      <div class="featured-main">
+        <div class="featured-text">
+          <span class="featured-label"><span class="dot"></span>Proyecto destacado</span>
+          <h3>Pista Libre</h3>
+          <p class="proj-tagline" style="margin-top:-6px">Java · Spring Boot · PostgreSQL · Angular</p>
+          <p>Aplicación completa de reservas para un club de tenis. Los socios consultan las horas libres de cada pista y reservan; el club gestiona pistas, tarifas, bloqueos y reservas desde un panel de administración.</p>
+          <ul class="exp-highlights">
+            <li><strong>Sin dobles reservas, tampoco con peticiones simultáneas:</strong> bloqueo de fila y restricción de exclusión en PostgreSQL, comprobado con un test que lanza diez reservas a la vez.</li>
+            <li><strong>Tests de integración contra PostgreSQL real</strong> con Testcontainers, y esquema versionado con Flyway.</li>
+            <li><strong>Tarifas por superficie, día y franja,</strong> calculadas por tramos de media hora y con suplemento de iluminación.</li>
+            <li><strong>Front en Angular con signals:</strong> rutas protegidas por rol e interceptor que gestiona la sesión JWT.</li>
+          </ul>
+          <div class="proj-tags">
+            <span class="tag">Spring Security</span>
+            <span class="tag">JWT</span>
+            <span class="tag">JPA / Hibernate</span>
+            <span class="tag">Flyway</span>
+            <span class="tag">Testcontainers</span>
+            <span class="tag">Docker</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">OpenAPI</span>
+          </div>
+          <a class="proj-link" href="https://github.com/kla7712/courtbooking" target="_blank" rel="noopener">Ver repositorio ↗</a>
+        </div>
+        <div class="featured-shot">
+          <a class="shot" href="img/pista-libre-reserva.png" target="_blank" rel="noopener">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>pista libre · reservar pista</span></div>
+            <img src="img/pista-libre-reserva.png" width="1061" height="786" alt="Página de una pista en Pista Libre: selector de día, horas libres con su precio y panel para confirmar la reserva">
+          </a>
+        </div>
+      </div>
+      <div class="featured-more">
+        <figure>
+          <a class="shot" href="img/pista-libre-pistas.png" target="_blank" rel="noopener">
+            <img src="img/pista-libre-pistas.png" width="1400" height="648" loading="lazy" alt="Portada de Pista Libre con el listado de pistas y el filtro por superficie">
+          </a>
+          <figcaption>Portada: pistas por superficie</figcaption>
+        </figure>
+        <figure>
+          <a class="shot" href="img/pista-libre-admin.png" target="_blank" rel="noopener">
+            <img src="img/pista-libre-admin.png" width="1400" height="638" loading="lazy" alt="Panel de administración de Pista Libre con las reservas del día">
+          </a>
+          <figcaption>Panel de administración: reservas del día</figcaption>
+        </figure>
+      </div>
+    </article>
+
     <div class="proj-grid">
 
       <div class="proj-card">
+        <div class="proj-art"><svg viewBox="0 0 120 64" aria-hidden="true"><path d="M38 56V30a22 22 0 0 1 44 0v26H71V30a11 11 0 0 0-22 0v26z"/><circle class="fill" cx="43.5" cy="46" r="1.6"/><circle class="fill" cx="43.5" cy="32" r="1.6"/><circle class="fill" cx="50" cy="18" r="1.6"/><circle class="fill" cx="70" cy="18" r="1.6"/><circle class="fill" cx="76.5" cy="32" r="1.6"/><circle class="fill" cx="76.5" cy="46" r="1.6"/></svg></div>
         <div class="proj-top">
           <h3>Animal Broker API</h3>
           <span class="proj-status"><span class="dot"></span>repo público</span>
@@ -371,6 +489,7 @@
       </div>
 
       <div class="proj-card">
+        <div class="proj-art"><svg viewBox="0 0 120 64" aria-hidden="true"><path d="M40 8h18c0 14-3 22-9 22s-9-8-9-22z"/><path d="M49 30v22M41 54h16"/><path class="dim" d="M42 18h14"/><path d="M76 6h6v10c4 2 6 6 6 11v27H70V27c0-5 2-9 6-11z"/><path class="dim" d="M70 34h18M70 44h18"/></svg></div>
         <div class="proj-top">
           <h3>VinoApp</h3>
           <span class="proj-status"><span class="dot"></span>repo público</span>
@@ -386,6 +505,7 @@
       </div>
 
       <div class="proj-card">
+        <div class="proj-art"><svg viewBox="0 0 120 64" aria-hidden="true"><rect x="30" y="12" width="60" height="44" rx="4"/><path d="M30 24h60M44 8v8M76 8v8"/><path class="dim" d="M50 24v32M70 24v32M30 40h60"/><path d="M36 32l3 3 5-6M56 48l3 3 5-6"/><circle class="fill" cx="80" cy="32" r="2.2"/></svg></div>
         <div class="proj-top">
           <h3>GestorUN</h3>
           <span class="proj-status"><span class="dot"></span>repo público</span>
@@ -401,6 +521,7 @@
       </div>
 
       <div class="proj-card">
+        <div class="proj-art"><svg viewBox="0 0 120 64" aria-hidden="true"><circle cx="34" cy="32" r="24"/><circle class="dim" cx="34" cy="32" r="16"/><circle class="dim" cx="34" cy="32" r="9"/><circle class="fill" cx="34" cy="32" r="2.4"/><path d="M66 32h6l4-14 6 28 6-22 5 14 4-6h9"/></svg></div>
         <div class="proj-top">
           <h3>Platter Tuner</h3>
           <span class="proj-status"><span class="dot"></span>repo público</span>
@@ -415,7 +536,8 @@
         <a class="proj-link" href="https://github.com/kla7712/afinador_tocadiscosv2" target="_blank" rel="noopener">Ver repositorio ↗</a>
       </div>
 
-      <div class="proj-card wide">
+      <div class="proj-card">
+        <div class="proj-art"><svg viewBox="0 0 120 64" aria-hidden="true"><path d="M28 12h40a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H42l-9 8v-8h-5a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5z"/><path class="dim" d="M33 21h30M33 28h20"/><path d="M92 30H62a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h22l8 7v-7a5 5 0 0 0 5-5V35a5 5 0 0 0-5-5z"/><circle class="fill" cx="68" cy="40" r="1.8"/><circle class="fill" cx="77" cy="40" r="1.8"/><circle class="fill" cx="86" cy="40" r="1.8"/></svg></div>
         <div class="proj-top">
           <h3>Bot WhatsApp</h3>
           <span class="proj-status"><span class="dot"></span>repo público</span>
@@ -429,7 +551,8 @@
         <a class="proj-link" href="https://github.com/kla7712/bot-whatsapp" target="_blank" rel="noopener">Ver repositorio ↗</a>
       </div>
 
-      <div class="proj-card wide">
+      <div class="proj-card">
+        <div class="proj-art"><svg viewBox="0 0 120 64" aria-hidden="true"><path d="M22 22l22-10 22 10v26L44 58 22 48z"/><path d="M22 22l22 10 22-10M44 32v26"/><path class="dim" d="M33 17l22 10"/><rect x="74" y="20" width="34" height="24" rx="3"/><path d="M74 28h34"/><path class="dim" d="M80 37h10"/><circle class="fill" cx="101" cy="37" r="2.2"/></svg></div>
         <div class="proj-top">
           <h3>Taller Kraft</h3>
           <span class="proj-status"><span class="dot"></span>repo público</span>
@@ -463,6 +586,7 @@
           <span class="chip">Java</span>
           <span class="chip">Spring Boot</span>
           <span class="chip">Spring MVC</span>
+          <span class="chip">Spring Security / JWT</span>
           <span class="chip">REST APIs</span>
           <span class="chip">Microservicios</span>
           <span class="chip">JPA / Hibernate</span>
@@ -510,6 +634,8 @@
           <span class="chip">IntelliJ IDEA</span>
           <span class="chip">VS Code</span>
           <span class="chip">Postman</span>
+          <span class="chip">Flyway</span>
+          <span class="chip">Testcontainers</span>
         </div>
       </div>
       <div class="stack-group">
@@ -553,8 +679,12 @@
 <script>
   const btn = document.getElementById('menuBtn');
   const links = document.getElementById('navLinks');
-  btn.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  const setOpen = (open) => {
+    links.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  };
+  btn.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
 </script>
 
 </body>
